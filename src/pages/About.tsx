@@ -121,10 +121,20 @@ export function About() {
             <div className="space-y-6 text-neo-black font-medium leading-relaxed text-left text-lg">
               <p>
                 Website ini dikembangkan sebagai bagian dari tugas Ujian Akhir
-                Semester pada mata kuliah <strong className="font-bold bg-cream px-1 border border-neo-black">Strategi Algoritma</strong>. Tujuan utama dari
-                pengembangan aplikasi ini adalah untuk mengimplementasikan dan
-                memvisualisasikan algoritma <strong className="font-bold bg-neo-yellow px-1 border border-neo-black">Greedy</strong> dalam menyelesaikan
-                permasalahan <strong className="font-bold bg-neo-blue text-white px-1 border border-neo-black">Coin Change</strong> (kembalian uang).
+                Semester pada mata kuliah{" "}
+                <strong className="font-bold bg-cream px-1 border border-neo-black">
+                  Strategi Algoritma
+                </strong>
+                . Tujuan utama dari pengembangan aplikasi ini adalah untuk
+                mengimplementasikan dan memvisualisasikan algoritma{" "}
+                <strong className="font-bold bg-neo-yellow px-1 border border-neo-black">
+                  Greedy
+                </strong>{" "}
+                dalam menyelesaikan permasalahan{" "}
+                <strong className="font-bold bg-neo-blue text-white px-1 border border-neo-black">
+                  Coin Change
+                </strong>{" "}
+                (kembalian uang).
               </p>
               <p>
                 Melalui website ini, pengguna dapat memahami bagaimana algoritma

@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { Coins, Home, Code, Users } from "lucide-react";
+import { Coins, Home, Code, Users, GraduationCap } from "lucide-react";
 import { cn } from "../utils/cn";
 
 export function Navbar() {
   const navItems = [
     { to: "/", label: "Beranda", icon: Home },
     { to: "/demo", label: "Demo", icon: Code },
+    { to: "/quiz", label: "Kuis", icon: GraduationCap },
     { to: "/about", label: "Tentang", icon: Users },
   ];
 

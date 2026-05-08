@@ -52,10 +52,15 @@ export function Home() {
         <p className="text-lg md:text-xl text-neo-black/80 font-medium max-w-2xl mx-auto mt-4">
           Website ini dirancang khusus untuk memvisualisasikan cara kerja algoritma Greedy secara interaktif melalui <strong className="text-neo-black bg-neo-yellow px-1 border border-neo-black font-bold">studi kasus pemberian kembalian uang (Coin Change)</strong>.
         </p>
-        <div className="pt-8">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/demo">
-            <Button size="lg" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300">
+            <Button size="lg" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto">
               Lihat Visualisasi Demo <ArrowRight className="w-6 h-6 stroke-[3px]" />
+            </Button>
+          </Link>
+          <Link to="/quiz">
+            <Button size="lg" variant="outline" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto bg-neo-yellow">
+              Mulai Kuis <Zap className="w-6 h-6 stroke-[3px]" />
             </Button>
           </Link>
         </div>
@@ -338,6 +343,28 @@ export function Home() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </motion.section>
+
+      <Divider />
+
+      {/* 5. FINAL CTA SECTION */}
+      <motion.section variants={item} className="text-center py-12 bg-neo-blue border-[4px] border-neo-black rounded-[32px] shadow-neo-brutal-xl relative overflow-hidden group">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="relative z-10 space-y-8 px-6">
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight" style={{textShadow: '4px 4px 0px #000'}}>
+            Sudah Paham Konsepnya?
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 font-bold max-w-2xl mx-auto leading-relaxed">
+            Uji pemahamanmu dengan kuis interaktif dan jadilah ahli algoritma Greedy!
+          </p>
+          <div className="pt-4">
+            <Link to="/quiz">
+              <Button size="lg" className="bg-neo-yellow text-neo-black border-[4px] border-neo-black shadow-neo-brutal hover:shadow-neo-brutal-lg hover:-translate-y-2 text-2xl px-12 py-8 rounded-neo uppercase font-black transition-all">
+                Mulai Kuis Sekarang <Zap className="w-8 h-8 stroke-[3px] ml-2" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </motion.section>
 

@@ -104,8 +104,23 @@ export function generateAlternativeSolutions(amount: number): Solution[] {
 }
 
 export function calculateChange(amount: number): GreedyResult {
+  if (amount < 0) {
+    throw new Error("Jumlah kembalian tidak boleh negatif");
+  }
+
   const steps: string[] = [];
   
+  if (amount === 0) {
+    steps.push("Jumlah kembalian adalah Rp 0. Tidak ada uang yang perlu dikembalikan.");
+    return {
+      optimalSolution: { result: [], totalItems: 0, isOptimal: true },
+      alternatives: [],
+      steps,
+      remaining: 0,
+      originalAmount: 0
+    };
+  }
+
   steps.push(`1. Total kembalian awal: Rp ${amount.toLocaleString('id-ID')}`);
 
   const optimal = greedySolution(amount);

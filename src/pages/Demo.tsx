@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { Calculator, RotateCcw, Receipt, ArrowRightCircle, AlertCircle, CheckCircle2, ListTree, Info } from "lucide-react";
+import { Calculator, RotateCcw, Receipt, ArrowRightCircle, AlertCircle, CheckCircle2, ListTree, Info, Zap } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
@@ -277,6 +278,19 @@ export function Demo() {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-6">
+        <Link to="/" className="w-full md:w-auto">
+          <Button variant="outline" size="lg" className="w-full gap-2 text-xl px-10 py-6">
+            Kembali ke Beranda
+          </Button>
+        </Link>
+        <Link to="/quiz" className="w-full md:w-auto">
+          <Button size="lg" className="w-full gap-2 text-xl px-10 py-6 bg-neo-yellow text-neo-black">
+            Uji Pemahaman: Ikuti Kuis <Zap className="w-6 h-6 stroke-[3px]" />
+          </Button>
+        </Link>
       </div>
 
       <Modal 
