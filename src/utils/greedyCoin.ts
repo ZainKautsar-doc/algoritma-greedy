@@ -128,7 +128,7 @@ export function calculateChange(amount: number): GreedyResult {
     steps.push(`Sisa Rp ${optimal.remaining.toLocaleString('id-ID')} tidak dapat dikembalikan karena lebih kecil dari pecahan terkecil yang tersedia (Rp 100).`);
   }
 
-  steps.push(`Kesimpulan: Metode greedy memilih pecahan terbesar terlebih dahulu untuk meminimalkan jumlah lembar/keping.`);
+  steps.push(`Kesimpulan: Total kembalian Rp ${amount.toLocaleString('id-ID')} berhasil diselesaikan dengan total ${optimal.totalItems} item (lembar/keping) menggunakan strategi Greedy.`);
 
   const optimalSolution: Solution = {
     result: optimal.result,

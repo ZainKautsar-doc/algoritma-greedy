@@ -235,10 +235,9 @@ export function Demo() {
                 </CardHeader>
                 <CardContent className="pt-10 pb-8 px-4 md:px-8">
                   <div className="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-[4px] before:bg-neo-black">
-                    {result.steps.map((step, idx) => {
+                    {result.steps.filter(step => step.trim() !== "").map((step, idx) => {
                       const isCalculation = step.startsWith("Perhitungan:");
                       const isConclusion = step.startsWith("Kesimpulan:");
-                      const isInitial = step.startsWith("1.");
                       
                       return (
                         <motion.div 
@@ -248,11 +247,11 @@ export function Demo() {
                           key={idx} 
                           className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group`}
                         >
-                          <div className={`flex items-center justify-center w-12 h-12 rounded-full border-[3px] border-neo-black bg-neo-yellow shadow-[2px_2px_0px_rgba(0,0,0,1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-black text-xl`}>
-                            {idx + 1}
+                          <div className={`flex items-center justify-center w-12 h-12 rounded-full border-[3px] border-neo-black ${isConclusion ? 'bg-neo-blue text-white' : 'bg-neo-yellow text-neo-black'} shadow-[2px_2px_0px_rgba(0,0,0,1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-black text-xl`}>
+                            {isConclusion ? '!' : idx + 1}
                           </div>
                           
-                          <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-neo border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] bg-white hover:-translate-y-1 transition-transform ${isCalculation ? 'bg-cream text-neo-black font-mono' : isConclusion ? 'bg-neo-blue text-white' : 'text-neo-black'}`}>
+                          <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-neo border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform ${isCalculation ? 'bg-cream text-neo-black font-mono' : isConclusion ? 'bg-neo-blue text-white' : 'bg-white text-neo-black'}`}>
                             <p className="font-bold text-base md:text-lg leading-relaxed">
                               {step.split(/(Rp [\d.]+)/).map((part, i) => 
                                 part.startsWith('Rp') ? (
