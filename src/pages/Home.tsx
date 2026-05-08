@@ -25,8 +25,8 @@ export function Home() {
   };
 
   const Divider = () => (
-    <motion.div variants={item} className="py-8">
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent opacity-50"></div>
+    <motion.div variants={item} className="py-12">
+      <div className="h-[4px] w-full bg-neo-black"></div>
     </motion.div>
   );
 
@@ -38,24 +38,24 @@ export function Home() {
       className="flex flex-col gap-8 max-w-5xl mx-auto pb-16"
     >
       {/* 1. HERO SECTION */}
-      <motion.section variants={item} className="text-center space-y-6 py-12 lg:py-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 text-blue-400 text-sm font-medium mb-4 border border-blue-800/50">
-          <Zap className="w-4 h-4" />
+      <motion.section variants={item} className="text-center space-y-8 py-12 lg:py-24 relative">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-neo bg-neo-yellow text-neo-black text-sm font-bold mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] uppercase tracking-wider">
+          <Zap className="w-5 h-5 stroke-[2.5px]" />
           <span>Edukasi Algoritma Interaktif</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-100">
-          Algoritma <span className="text-blue-500">Greedy</span>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight text-neo-black uppercase">
+          Algoritma <span className="text-neo-blue" style={{textShadow: '4px 4px 0px #000'}}>Greedy</span>
         </h1>
-        <p className="text-xl text-slate-300 font-medium max-w-3xl mx-auto">
-          Pendekatan sederhana yang selalu memilih <span className="text-blue-400">keputusan terbaik saat ini</span> dengan harapan mendapatkan solusi akhir yang optimal.
+        <p className="text-xl md:text-2xl text-neo-black font-bold max-w-3xl mx-auto leading-relaxed">
+          Pendekatan sederhana yang selalu memilih <span className="bg-neo-blue text-white px-2 py-1 rounded-md border-2 border-neo-black">keputusan terbaik saat ini</span> dengan harapan mendapatkan solusi akhir yang optimal.
         </p>
-        <p className="text-lg text-slate-400 max-w-2xl mx-auto mt-2">
-          Website ini dirancang khusus untuk memvisualisasikan cara kerja algoritma Greedy secara interaktif melalui <strong className="text-slate-200 font-semibold">studi kasus pemberian kembalian uang (Coin Change)</strong>.
+        <p className="text-lg md:text-xl text-neo-black/80 font-medium max-w-2xl mx-auto mt-4">
+          Website ini dirancang khusus untuk memvisualisasikan cara kerja algoritma Greedy secara interaktif melalui <strong className="text-neo-black bg-neo-yellow px-1 border border-neo-black font-bold">studi kasus pemberian kembalian uang (Coin Change)</strong>.
         </p>
         <div className="pt-8">
           <Link to="/demo">
-            <Button size="lg" className="gap-2 text-base px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-300">
-              Lihat Visualisasi Demo <ArrowRight className="w-5 h-5" />
+            <Button size="lg" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300">
+              Lihat Visualisasi Demo <ArrowRight className="w-6 h-6 stroke-[3px]" />
             </Button>
           </Link>
         </div>
@@ -66,54 +66,58 @@ export function Home() {
       {/* 2. SECTION: PENJELASAN ALGORITMA GREEDY */}
       <motion.section variants={item} className="space-y-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-100 mb-4 flex items-center justify-center gap-3">
-            <Lightbulb className="w-8 h-8 text-blue-500" />
+          <h2 className="text-4xl font-black text-neo-black mb-4 flex items-center justify-center gap-4 uppercase">
+            <Lightbulb className="w-10 h-10 text-neo-blue stroke-[3px]" />
             Penjelasan Algoritma Greedy
           </h2>
-          <p className="text-slate-400">Mengenal konsep dasar sebelum masuk ke studi kasus.</p>
+          <p className="text-xl font-medium text-neo-black/80">Mengenal konsep dasar sebelum masuk ke studi kasus.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <Card className="border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center mb-4 border border-blue-800/50">
-                <Target className="w-6 h-6 text-blue-400" />
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <Card className="bg-cream -rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black">
+              <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <Target className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">A. Apa itu Algoritma Greedy?</CardTitle>
+              <CardTitle className="text-2xl text-white">A. Apa itu Algoritma Greedy?</CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-400 space-y-4">
-              <p>
-                Dalam bahasa sederhana, <strong>Greedy (rakus)</strong> adalah metode memecahkan masalah dengan cara <span className="text-blue-400 font-medium">memilih solusi terbaik pada setiap langkahnya (lokal)</span>, tanpa melihat konsekuensi untuk keseluruhan kemungkinan ke depannya.
+            <CardContent className="text-neo-black font-medium space-y-4 pt-6">
+              <p className="text-lg">
+                Dalam bahasa sederhana, <strong>Greedy (rakus)</strong> adalah metode memecahkan masalah dengan cara <span className="bg-neo-yellow px-1 border border-neo-black font-bold">memilih solusi terbaik pada setiap langkahnya (lokal)</span>, tanpa melihat konsekuensi untuk keseluruhan kemungkinan ke depannya.
               </p>
-              <div className="p-4 rounded-lg bg-blue-950/30 border border-blue-900/50">
-                <p className="text-sm">
-                  💡 <strong>Analogi Sederhana:</strong> Bayangkan Anda ingin mengambil uang sebanyak mungkin dari sebuah kotak. Algoritma Greedy akan menyuruh Anda mengambil <span className="text-blue-400">pecahan uang dengan nilai terbesar yang Anda lihat pertama kali</span>, tanpa memikirkan apa yang tersisa di bawahnya.
+              <div className="p-4 rounded-neo bg-white border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <p className="text-base font-bold">
+                  💡 Analogi Sederhana:<br/><span className="font-medium">Bayangkan Anda ingin mengambil uang sebanyak mungkin dari sebuah kotak. Algoritma Greedy akan menyuruh Anda mengambil <span className="text-neo-blue font-bold">pecahan uang dengan nilai terbesar yang Anda lihat pertama kali</span>, tanpa memikirkan apa yang tersisa di bawahnya.</span>
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center mb-4 border border-blue-800/50">
-                <Activity className="w-6 h-6 text-blue-400" />
+          <Card className="bg-cream rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black">
+              <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <Activity className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">B. Karakteristik Utama</CardTitle>
+              <CardTitle className="text-2xl text-white">B. Karakteristik Utama</CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-400">
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+            <CardContent className="text-neo-black pt-6">
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="w-8 h-8 rounded-full bg-neo-yellow border-2 border-neo-black flex items-center justify-center flex-shrink-0 mt-1 shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                    <span className="font-bold">1</span>
+                  </div>
                   <div>
-                    <strong className="text-slate-200 block mb-1">Greedy Choice Property</strong>
-                    <p className="text-sm">Kita bisa membuat pilihan optimal secara lokal pada saat itu juga, tanpa harus memikirkan dampak dari pilihan tersebut di masa depan.</p>
+                    <strong className="text-neo-black text-lg block mb-1">Greedy Choice Property</strong>
+                    <p className="font-medium text-neo-black/80">Kita bisa membuat pilihan optimal secara lokal pada saat itu juga, tanpa harus memikirkan dampak dari pilihan tersebut di masa depan.</p>
                   </div>
                 </li>
-                <li className="flex gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                <li className="flex gap-4">
+                  <div className="w-8 h-8 rounded-full bg-neo-yellow border-2 border-neo-black flex items-center justify-center flex-shrink-0 mt-1 shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                    <span className="font-bold">2</span>
+                  </div>
                   <div>
-                    <strong className="text-slate-200 block mb-1">Optimal Substructure</strong>
-                    <p className="text-sm">Masalah besar dapat dipecahkan dengan memecahkannya menjadi masalah yang lebih kecil, lalu menyelesaikan masalah kecil tersebut satu per satu secara optimal.</p>
+                    <strong className="text-neo-black text-lg block mb-1">Optimal Substructure</strong>
+                    <p className="font-medium text-neo-black/80">Masalah besar dapat dipecahkan dengan memecahkannya menjadi masalah yang lebih kecil, lalu menyelesaikan masalah kecil tersebut satu per satu secara optimal.</p>
                   </div>
                 </li>
               </ul>
@@ -121,29 +125,29 @@ export function Home() {
           </Card>
         </div>
 
-        <Card className="border-blue-900/40 bg-gradient-to-br from-blue-950/20 to-slate-900/50">
-          <CardHeader>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center">
-                <ListOrdered className="w-5 h-5 text-blue-400" />
+        <Card className="bg-neo-yellow">
+          <CardHeader className="border-b-[3px] border-neo-black bg-white">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-neo bg-neo-blue flex items-center justify-center border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <ListOrdered className="w-6 h-6 text-white stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">C. Cara Kerja Umum Algoritma Greedy</CardTitle>
+              <CardTitle className="text-2xl text-neo-black uppercase">C. Cara Kerja Umum Algoritma Greedy</CardTitle>
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mt-2">
+          <CardContent className="pt-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-2">
               {[
-                { title: "Tentukan Pilihan", desc: "Lihat semua pilihan yang tersedia saat ini." },
-                { title: "Pilih Terbaik", desc: "Ambil opsi yang memberikan hasil paling menguntungkan (lokal optimum)." },
-                { title: "Kunci Keputusan", desc: "Keputusan yang sudah diambil tidak akan pernah diubah lagi." },
-                { title: "Ulangi Proses", desc: "Lakukan berulang kali hingga seluruh masalah selesai." }
+                { title: "Tentukan Pilihan", desc: "Lihat semua pilihan yang tersedia saat ini.", color: "bg-cream" },
+                { title: "Pilih Terbaik", desc: "Ambil opsi yang memberikan hasil paling menguntungkan (lokal optimum).", color: "bg-neo-green" },
+                { title: "Kunci Keputusan", desc: "Keputusan yang sudah diambil tidak akan pernah diubah lagi.", color: "bg-neo-red text-white" },
+                { title: "Ulangi Proses", desc: "Lakukan berulang kali hingga seluruh masalah selesai.", color: "bg-neo-purple text-white" }
               ].map((step, i) => (
-                <div key={i} className="relative p-5 rounded-xl bg-slate-800/50 border border-slate-700/50">
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg border-2 border-slate-900">
+                <div key={i} className={`relative p-6 rounded-neo border-[3px] border-neo-black shadow-neo-brutal ${step.color} hover:-translate-y-2 transition-transform`}>
+                  <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-neo-black flex items-center justify-center font-bold text-white text-xl border-[3px] border-white shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                     {i + 1}
                   </div>
-                  <h4 className="font-semibold text-slate-200 mb-2">{step.title}</h4>
-                  <p className="text-sm text-slate-400">{step.desc}</p>
+                  <h4 className="font-bold text-xl mb-3">{step.title}</h4>
+                  <p className="font-medium leading-relaxed">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -156,53 +160,53 @@ export function Home() {
       {/* 3. SECTION: STUDI KASUS COIN CHANGE */}
       <motion.section variants={item} className="space-y-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-100 mb-4 flex items-center justify-center gap-3">
-            <Coins className="w-8 h-8 text-amber-500" />
+          <h2 className="text-4xl font-black text-neo-black mb-4 flex items-center justify-center gap-4 uppercase">
+            <Coins className="w-10 h-10 text-neo-yellow stroke-[3px]" />
             Studi Kasus: Kembalian Uang (Coin Change)
           </h2>
-          <p className="text-slate-400">Penerapan praktis algoritma Greedy dalam kehidupan sehari-hari.</p>
+          <p className="text-xl font-medium text-neo-black/80">Penerapan praktis algoritma Greedy dalam kehidupan sehari-hari.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <Card className="border-amber-900/30 bg-slate-900/50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-xl bg-amber-900/30 flex items-center justify-center mb-4 border border-amber-800/50">
-                <WalletCards className="w-6 h-6 text-amber-400" />
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <Card className="bg-cream rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black">
+              <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <WalletCards className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">A. Penjelasan Masalah</CardTitle>
+              <CardTitle className="text-2xl text-white">A. Penjelasan Masalah</CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-400 space-y-4">
-              <p>
+            <CardContent className="text-neo-black space-y-4 pt-6">
+              <p className="text-lg font-medium">
                 Dalam masalah <strong>Coin Change</strong>, kita dihadapkan pada situasi di mana pembeli membayar lebih dari total belanjaan, dan kasir harus memberikan uang kembalian.
               </p>
-              <div className="p-4 rounded-lg bg-slate-800/80 border border-slate-700">
-                <p className="text-slate-300">
-                  🎯 <strong>Tujuan Utama:</strong> Mencari kombinasi pecahan uang dengan <span className="text-amber-400 font-semibold">jumlah lembar/koin paling sedikit</span> agar efisien.
+              <div className="p-4 rounded-neo bg-neo-yellow border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <p className="text-neo-black text-base font-bold">
+                  🎯 Tujuan Utama:<br/><span className="font-medium">Mencari kombinasi pecahan uang dengan <span className="bg-white px-1 border border-neo-black font-bold">jumlah lembar/koin paling sedikit</span> agar efisien.</span>
                 </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="border-amber-900/30 bg-slate-900/50 backdrop-blur-sm">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-xl bg-amber-900/30 flex items-center justify-center mb-4 border border-amber-800/50">
-                <Briefcase className="w-6 h-6 text-amber-400" />
+          <Card className="bg-cream -rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black">
+              <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <Briefcase className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">B. Cara Kerja Greedy pada Kasus Ini</CardTitle>
+              <CardTitle className="text-2xl text-white">B. Cara Kerja Greedy pada Kasus Ini</CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="space-y-3">
+            <CardContent className="pt-6">
+              <ul className="space-y-4">
                 {[
                   "Urutkan pecahan uang dari yang terbesar ke terkecil.",
                   "Ambil pecahan terbesar yang nilainya tidak melebihi sisa kembalian.",
                   "Kurangi sisa kembalian dengan nilai pecahan tersebut.",
                   "Ulangi langkah di atas hingga sisa kembalian = 0."
                 ].map((text, i) => (
-                  <li key={i} className="flex gap-3 text-slate-400 text-sm">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-amber-900/50 text-amber-500 flex items-center justify-center font-bold text-xs">
+                  <li key={i} className="flex gap-4 text-neo-black text-lg font-medium">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-neo-yellow border-2 border-neo-black text-neo-black flex items-center justify-center font-bold shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                       {i + 1}
                     </span>
-                    <span className="mt-0.5">{text}</span>
+                    <span className="mt-1">{text}</span>
                   </li>
                 ))}
               </ul>
@@ -211,51 +215,51 @@ export function Home() {
         </div>
 
         {/* Real Case Example */}
-        <Card className="border-slate-700/50 bg-slate-800/30">
-          <CardHeader>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-emerald-900/30 flex items-center justify-center border border-emerald-800/50">
-                <Receipt className="w-5 h-5 text-emerald-400" />
+        <Card className="bg-cream">
+          <CardHeader className="bg-white border-b-[3px] border-neo-black">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-neo bg-neo-green flex items-center justify-center border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                <Receipt className="w-6 h-6 text-neo-black stroke-[2.5px]" />
               </div>
-              <CardTitle className="text-xl text-slate-100">C. Contoh Kasus Nyata</CardTitle>
+              <CardTitle className="text-2xl text-neo-black uppercase">C. Contoh Kasus Nyata</CardTitle>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-6">
             <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="flex-1 w-full bg-slate-900/80 p-6 rounded-xl border border-slate-700 shadow-inner">
-                <div className="space-y-3">
-                  <div className="flex justify-between text-slate-300">
+              <div className="flex-1 w-full bg-white p-6 rounded-neo border-[3px] border-neo-black shadow-neo-brutal">
+                <div className="space-y-4 font-bold text-lg">
+                  <div className="flex justify-between text-neo-black/80">
                     <span>Total Belanja:</span>
-                    <strong className="text-red-400">Rp 87.500</strong>
+                    <strong className="text-neo-red">Rp 87.500</strong>
                   </div>
-                  <div className="flex justify-between text-slate-300">
+                  <div className="flex justify-between text-neo-black/80">
                     <span>Uang Dibayar:</span>
-                    <strong className="text-emerald-400">Rp 100.000</strong>
+                    <strong className="text-neo-green">Rp 100.000</strong>
                   </div>
-                  <div className="h-px bg-slate-700/50 my-2"></div>
-                  <div className="flex justify-between text-slate-100 text-lg">
+                  <div className="h-[3px] bg-neo-black my-4"></div>
+                  <div className="flex justify-between text-neo-black text-xl">
                     <span>Kembalian:</span>
-                    <strong className="text-amber-400">Rp 12.500</strong>
+                    <strong className="bg-neo-yellow px-2 py-1 rounded border-2 border-neo-black">Rp 12.500</strong>
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center justify-center md:rotate-0 rotate-90 hidden md:block">
-                <ArrowRight className="w-8 h-8 text-slate-600" />
+                <ArrowRight className="w-12 h-12 text-neo-black stroke-[3px]" />
               </div>
 
-              <div className="flex-1 w-full space-y-3">
-                <div className="bg-slate-800/80 p-4 rounded-lg flex items-center gap-4 border border-slate-700">
-                  <div className="w-14 h-8 bg-blue-900/40 rounded flex items-center justify-center text-blue-400-400 font-bold border border-blue-800/50 text-sm">10k</div>
-                  <div className="text-sm text-slate-300">Ambil <strong className="text-slate-100">Rp 10.000</strong> &rarr; Sisa <span className="text-amber-400">Rp 2.500</span></div>
+              <div className="flex-1 w-full space-y-4">
+                <div className="bg-white p-4 rounded-neo flex items-center gap-4 border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+                  <div className="w-16 h-10 bg-neo-blue rounded flex items-center justify-center text-white font-bold border-[3px] border-neo-black text-base">10k</div>
+                  <div className="text-base text-neo-black font-medium">Ambil <strong className="font-bold">Rp 10.000</strong> &rarr; Sisa <span className="bg-neo-yellow px-1 border border-neo-black">Rp 2.500</span></div>
                 </div>
-                <div className="bg-slate-800/80 p-4 rounded-lg flex items-center gap-4 border border-slate-700">
-                  <div className="w-14 h-8 bg-blue-900/40 rounded flex items-center justify-center text-blue-400 font-bold border border-blue-800/50 text-sm">2k</div>
-                  <div className="text-sm text-slate-300">Ambil <strong className="text-slate-100">Rp 2.000</strong> &rarr; Sisa <span className="text-amber-400">Rp 500</span></div>
+                <div className="bg-white p-4 rounded-neo flex items-center gap-4 border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+                  <div className="w-16 h-10 bg-neo-blue rounded flex items-center justify-center text-white font-bold border-[3px] border-neo-black text-base">2k</div>
+                  <div className="text-base text-neo-black font-medium">Ambil <strong className="font-bold">Rp 2.000</strong> &rarr; Sisa <span className="bg-neo-yellow px-1 border border-neo-black">Rp 500</span></div>
                 </div>
-                <div className="bg-slate-800/80 p-4 rounded-lg flex items-center gap-4 border border-slate-700">
-                  <div className="w-14 h-8 bg-slate-700 rounded-full flex items-center justify-center text-slate-300 font-bold border border-slate-600 text-sm">500</div>
-                  <div className="text-sm text-slate-300">Ambil <strong className="text-slate-100">Rp 500</strong> &rarr; <span className="text-emerald-400 font-medium whitespace-nowrap">Selesai <CheckCircle2 className="w-4 h-4 inline pb-0.5" /></span></div>
+                <div className="bg-white p-4 rounded-neo flex items-center gap-4 border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+                  <div className="w-16 h-10 bg-neo-black rounded-full flex items-center justify-center text-white font-bold border-[3px] border-neo-black text-base">500</div>
+                  <div className="text-base text-neo-black font-medium">Ambil <strong className="font-bold">Rp 500</strong> &rarr; <span className="text-neo-green font-bold whitespace-nowrap">Selesai <CheckCircle2 className="w-5 h-5 inline pb-0.5 stroke-[3px]" /></span></div>
                 </div>
               </div>
             </div>
@@ -268,67 +272,67 @@ export function Home() {
       {/* 4. SECTION: KELEBIHAN & KEKURANGAN */}
       <motion.section variants={item} className="space-y-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-100 mb-4 flex items-center justify-center gap-3">
-            <TrendingUp className="w-8 h-8 text-purple-500" />
+          <h2 className="text-4xl font-black text-neo-black mb-4 flex items-center justify-center gap-4 uppercase">
+            <TrendingUp className="w-10 h-10 text-neo-purple stroke-[3px]" />
             Kelebihan & Kekurangan
           </h2>
-          <p className="text-slate-400">Evaluasi efektivitas algoritma Greedy.</p>
+          <p className="text-xl font-medium text-neo-black/80">Evaluasi efektivitas algoritma Greedy.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="border-emerald-900/50 bg-emerald-950/10 backdrop-blur-sm h-full">
-            <CardHeader>
-              <CardTitle className="text-xl text-emerald-400 flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6" /> 
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="bg-neo-green h-full rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+              <CardTitle className="text-2xl text-neo-black flex items-center gap-4 uppercase">
+                <CheckCircle2 className="w-8 h-8 stroke-[3px]" /> 
                 A. Kelebihan
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-300 space-y-3">
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                  <p><strong>Cepat dan Efisien:</strong> Sangat ringan diproses oleh komputer karena tidak perlu menghitung semua kemungkinan.</p>
+            <CardContent className="text-neo-black space-y-4 pt-6">
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="w-4 h-4 rounded-full bg-neo-black border-2 border-white mt-2 shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]"></div>
+                  <p className="font-medium text-lg"><strong className="font-bold bg-white px-1 border border-neo-black">Cepat dan Efisien:</strong> Sangat ringan diproses oleh komputer karena tidak perlu menghitung semua kemungkinan.</p>
                 </li>
-                <li className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                  <p><strong>Mudah Diimplementasikan:</strong> Logikanya sangat intuitif dan mudah dipahami, cocok untuk dipelajari pemula.</p>
+                <li className="flex gap-4">
+                  <div className="w-4 h-4 rounded-full bg-neo-black border-2 border-white mt-2 shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]"></div>
+                  <p className="font-medium text-lg"><strong className="font-bold bg-white px-1 border border-neo-black">Mudah Diimplementasikan:</strong> Logikanya sangat intuitif dan mudah dipahami, cocok untuk dipelajari pemula.</p>
                 </li>
-                <li className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                  <p><strong>Cocok untuk Sistem Nyata:</strong> Sangat efektif digunakan pada mata uang standar (Rupiah, USD) karena pecahannya dirancang agar Greedy selalu optimal.</p>
+                <li className="flex gap-4">
+                  <div className="w-4 h-4 rounded-full bg-neo-black border-2 border-white mt-2 shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]"></div>
+                  <p className="font-medium text-lg"><strong className="font-bold bg-white px-1 border border-neo-black">Cocok untuk Sistem Nyata:</strong> Sangat efektif digunakan pada mata uang standar (Rupiah, USD) karena pecahannya dirancang agar Greedy selalu optimal.</p>
                 </li>
               </ul>
             </CardContent>
           </Card>
 
-          <Card className="border-red-900/50 bg-red-950/10 backdrop-blur-sm h-full">
-            <CardHeader>
-              <CardTitle className="text-xl text-red-400 flex items-center gap-3">
-                <XCircle className="w-6 h-6" /> 
+          <Card className="bg-neo-red h-full -rotate-1 hover:rotate-0 transition-transform">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+              <CardTitle className="text-2xl text-neo-black flex items-center gap-4 uppercase">
+                <XCircle className="w-8 h-8 stroke-[3px]" /> 
                 B. Kekurangan
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-slate-300 space-y-4">
-              <ul className="space-y-4">
-                <li className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2 shrink-0"></div>
-                  <p><strong>Tidak Selalu Optimal:</strong> Ada kasus di mana algoritma ini gagal menemukan solusi terbaik atau jumlah koin paling sedikit.</p>
+            <CardContent className="text-neo-black space-y-4 pt-6">
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <div className="w-4 h-4 rounded-full bg-neo-black border-2 border-white mt-2 shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]"></div>
+                  <p className="font-medium text-lg text-white"><strong className="font-bold bg-white text-neo-black px-1 border border-neo-black">Tidak Selalu Optimal:</strong> Ada kasus di mana algoritma ini gagal menemukan solusi terbaik atau jumlah koin paling sedikit.</p>
                 </li>
-                <li className="flex gap-3">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mt-2 shrink-0"></div>
-                  <p><strong>Bergantung Struktur Masalah:</strong> Pecahan uang harus memiliki perhitungan yang kompatibel agar algoritma bekerja sempurna.</p>
+                <li className="flex gap-4">
+                  <div className="w-4 h-4 rounded-full bg-neo-black border-2 border-white mt-2 shrink-0 shadow-[2px_2px_0px_rgba(0,0,0,1)]"></div>
+                  <p className="font-medium text-lg text-white"><strong className="font-bold bg-white text-neo-black px-1 border border-neo-black">Bergantung Struktur Masalah:</strong> Pecahan uang harus memiliki perhitungan yang kompatibel agar algoritma bekerja sempurna.</p>
                 </li>
               </ul>
 
-              <div className="mt-6 p-4 rounded-lg bg-red-950/30 border border-red-900/50">
-                <p className="text-sm font-semibold text-red-400 mb-2 flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4" /> Contoh Kegagalan Greedy
+              <div className="mt-8 p-6 rounded-neo bg-white border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform">
+                <p className="text-lg font-bold text-neo-black mb-3 flex items-center gap-3">
+                  <AlertCircle className="w-6 h-6 stroke-[2.5px] text-neo-red" /> Contoh Kegagalan Greedy
                 </p>
-                <div className="text-sm text-slate-300 space-y-2">
+                <div className="text-base text-neo-black font-medium space-y-3">
                   <p>Bayangkan kita punya pecahan buatan: <strong>1, 3, dan 4</strong>. Target kembalian <strong>6</strong>.</p>
-                  <div className="space-y-1 bg-black/20 p-3 rounded border border-red-900/30">
-                    <p>❌ <span className="text-red-400 font-medium">Algoritma Greedy:</span> <br/>Ambil 4 &rarr; 1 &rarr; 1 (Total: <strong>3 koin</strong>)</p>
-                    <p className="border-t border-slate-700/50 pt-1 mt-1">✅ <span className="text-emerald-400 font-medium">Solusi Optimal Nyata:</span> <br/>Ambil 3 &rarr; 3 (Total: <strong>2 koin</strong>)</p>
+                  <div className="space-y-2 bg-cream p-4 rounded-md border-[3px] border-neo-black shadow-inner">
+                    <p>❌ <span className="text-neo-red font-bold uppercase">Algoritma Greedy:</span> <br/>Ambil 4 &rarr; 1 &rarr; 1 (Total: <strong className="bg-neo-yellow px-1 border border-neo-black">3 koin</strong>)</p>
+                    <p className="border-t-[3px] border-neo-black pt-3 mt-3">✅ <span className="text-neo-green font-bold uppercase">Solusi Optimal Nyata:</span> <br/>Ambil 3 &rarr; 3 (Total: <strong className="bg-neo-yellow px-1 border border-neo-black">2 koin</strong>)</p>
                   </div>
                 </div>
               </div>

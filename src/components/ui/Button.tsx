@@ -12,14 +12,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-neo text-base font-bold uppercase transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neo-black disabled:pointer-events-none disabled:opacity-50",
           {
-            "bg-blue-600 text-white hover:bg-blue-700": variant === "default",
-            "border border-blue-600 text-blue-500 hover:bg-blue-950/50": variant === "outline",
-            "hover:bg-blue-900/30 text-blue-400": variant === "ghost",
-            "h-10 px-4 py-2": size === "default",
-            "h-9 rounded-md px-3": size === "sm",
-            "h-11 rounded-md px-8": size === "lg",
+            "bg-neo-blue text-white border-[3px] border-neo-black shadow-neo-brutal hover:-translate-y-1 hover:shadow-neo-brutal-lg": variant === "default",
+            "bg-white border-[3px] border-neo-black text-neo-black shadow-neo-brutal hover:-translate-y-1 hover:shadow-neo-brutal-lg hover:bg-cream": variant === "outline",
+            "hover:bg-neo-yellow text-neo-black border-[3px] border-transparent hover:border-neo-black hover:shadow-neo-brutal hover:-translate-y-1": variant === "ghost",
+            "px-6 py-3.5": size === "default",
+            "px-4 py-2 text-sm": size === "sm",
+            "px-8 py-5 text-lg": size === "lg",
           },
           className
         )}

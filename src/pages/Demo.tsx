@@ -73,17 +73,17 @@ export function Demo() {
     const kepingCount = solution.result.filter(r => r.type === 'keping').reduce((acc, curr) => acc + curr.count, 0);
 
     return (
-      <div className="space-y-3">
-        <div className="flex flex-wrap gap-2 text-sm text-slate-400 mb-2">
-          {lembarCount > 0 && <span className="bg-slate-800 px-2 py-1 rounded">{lembarCount} lembar</span>}
-          {kepingCount > 0 && <span className="bg-slate-800 px-2 py-1 rounded">{kepingCount} keping</span>}
-          <span className="bg-blue-900/30 text-blue-400 px-2 py-1 rounded font-medium">Total: {solution.totalItems} item</span>
+      <div className="space-y-4 mt-4">
+        <div className="flex flex-wrap gap-2 text-sm text-neo-black font-bold mb-2">
+          {lembarCount > 0 && <span className="bg-neo-blue text-white px-2 py-1 border-2 border-neo-black">{lembarCount} lembar</span>}
+          {kepingCount > 0 && <span className="bg-neo-blue text-white px-2 py-1 border-2 border-neo-black">{kepingCount} keping</span>}
+          <span className="bg-neo-yellow px-2 py-1 border-2 border-neo-black">Total: {solution.totalItems} item</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {solution.result.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-between bg-slate-900/80 p-2.5 rounded-md border border-slate-800/60">
-              <span className="font-medium text-slate-200">Rp {item.coin.toLocaleString('id-ID')}</span>
-              <span className="text-sm text-slate-400">{item.count} {item.type}</span>
+            <div key={idx} className="flex items-center justify-between bg-white p-3 rounded-md border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+              <span className="font-bold text-neo-black text-lg">Rp {item.coin.toLocaleString('id-ID')}</span>
+              <span className="text-sm font-bold bg-cream px-2 py-1 border border-neo-black">{item.count} {item.type}</span>
             </div>
           ))}
         </div>
@@ -93,24 +93,24 @@ export function Demo() {
 
   return (
     <div className="max-w-5xl mx-auto space-y-8">
-      <div className="text-center space-y-4 mb-8">
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-100">Demo Algoritma Greedy</h1>
-        <p className="text-slate-400">Masukkan total belanja dan uang yang dibayarkan untuk melihat proses perhitungan kembalian.</p>
+      <div className="text-center space-y-4 mb-10">
+        <h1 className="text-4xl md:text-5xl font-black text-neo-black uppercase">Demo Algoritma Greedy</h1>
+        <p className="text-neo-black font-medium text-lg">Masukkan total belanja dan uang yang dibayarkan untuk melihat proses perhitungan kembalian.</p>
       </div>
 
       <div className="grid lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
-          <Card className="sticky top-24">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-slate-100">
-                <Calculator className="w-5 h-5 text-blue-500" />
+          <Card className="sticky top-28 bg-neo-purple">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+              <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
+                <Calculator className="w-6 h-6 stroke-[3px]" />
                 Input Transaksi
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-6 bg-white">
               <form onSubmit={handleCalculate} className="space-y-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Total Belanja (Rp)</label>
+                  <label className="text-base font-bold text-neo-black">Total Belanja (Rp)</label>
                   <Input
                     type="text"
                     placeholder="Contoh: 150.000"
@@ -120,7 +120,7 @@ export function Demo() {
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-300">Uang Dibayar (Rp)</label>
+                  <label className="text-base font-bold text-neo-black">Uang Dibayar (Rp)</label>
                   <Input
                     type="text"
                     placeholder="Contoh: 200.000"
@@ -129,12 +129,12 @@ export function Demo() {
                   />
                 </div>
 
-                <div className="flex gap-3 pt-2">
-                  <Button type="submit" className="flex-1 gap-2">
-                    Hitung <ArrowRightCircle className="w-4 h-4" />
+                <div className="flex gap-4 pt-4">
+                  <Button type="submit" className="flex-1 gap-2 text-lg">
+                    Hitung <ArrowRightCircle className="w-5 h-5 stroke-[3px]" />
                   </Button>
-                  <Button type="button" variant="outline" onClick={handleReset} className="px-3">
-                    <RotateCcw className="w-4 h-4" />
+                  <Button type="button" variant="outline" onClick={handleReset} className="px-4">
+                    <RotateCcw className="w-5 h-5 stroke-[3px]" />
                   </Button>
                 </div>
               </form>
@@ -165,68 +165,76 @@ export function Demo() {
                 </motion.div>
               )}
 
-              <Card className="border-blue-500/50 bg-blue-950/10 shadow-[0_0_15px_rgba(59,130,246,0.1)] relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" /> Solusi Optimal (Greedy)
+              <Card className="bg-neo-blue shadow-neo-brutal-xl relative overflow-visible border-[3px] border-neo-black mt-8">
+                <div className="absolute -top-4 -right-4 bg-neo-yellow text-neo-black text-sm font-bold px-4 py-2 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] flex items-center gap-2 transform rotate-3 z-10">
+                  <CheckCircle2 className="w-5 h-5 stroke-[3px]" /> Solusi Optimal (Greedy)
                 </div>
-                <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-2 text-slate-100">
-                    <Receipt className="w-5 h-5 text-blue-400" />
+                <CardHeader className="pb-4 bg-white border-b-[3px] border-neo-black rounded-t-lg">
+                  <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
+                    <Receipt className="w-6 h-6 stroke-[3px]" />
                     Hasil Utama
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="mb-6">
-                    <p className="text-sm text-slate-400 mb-1">Total Kembalian</p>
-                    <p className="text-3xl font-bold text-blue-400">
+                <CardContent className="bg-white rounded-b-lg pt-6">
+                  <div className="mb-8 border-[3px] border-neo-black p-4 inline-block bg-neo-yellow shadow-[4px_4px_0px_rgba(0,0,0,1)] -rotate-1">
+                    <p className="text-lg font-bold text-neo-black mb-1">Total Kembalian</p>
+                    <p className="text-4xl md:text-5xl font-black text-neo-black">
                       Rp {result.originalAmount.toLocaleString('id-ID')}
                     </p>
                   </div>
 
                   {result.optimalSolution.result.length > 0 ? (
-                    <div className="space-y-3">
-                      <h4 className="text-sm font-medium text-slate-300 border-b border-slate-800 pb-2">Rincian Pecahan Optimal:</h4>
+                    <div className="space-y-4 border-[3px] border-neo-black p-6 rounded-neo bg-cream shadow-inner">
+                      <h4 className="text-xl font-bold text-neo-black border-b-[3px] border-neo-black pb-3 uppercase">Rincian Pecahan Optimal:</h4>
                       {renderSolutionDetails(result.optimalSolution)}
                     </div>
                   ) : (
-                    <p className="text-slate-400 italic">Tidak ada pecahan yang diberikan.</p>
+                    <p className="text-neo-black font-bold italic bg-cream p-4 border-[3px] border-neo-black rounded-neo shadow-[2px_2px_0px_rgba(0,0,0,1)]">Tidak ada pecahan yang diberikan.</p>
                   )}
                 </CardContent>
               </Card>
 
               {result.alternatives.length > 0 && (
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-slate-100">
-                      <ListTree className="w-5 h-5 text-emerald-500" />
+                <Card className="bg-white mt-8 border-[3px] border-neo-black shadow-neo-brutal">
+                  <CardHeader className="bg-neo-green border-b-[3px] border-neo-black">
+                    <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
+                      <ListTree className="w-6 h-6 stroke-[3px]" />
                       Alternatif Solusi
                     </CardTitle>
-                    <p className="text-sm text-slate-400 mt-1">
+                    <p className="text-base font-bold text-neo-black mt-2 bg-white inline-block px-3 py-1 border-[2px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                       Kombinasi lain yang valid namun membutuhkan lebih banyak lembar/keping.
                     </p>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    {result.alternatives.map((alt, idx) => (
-                      <div key={idx} className="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                        <div className="flex justify-between items-center mb-3">
-                          <h5 className="font-medium text-slate-300">Alternatif {idx + 1}</h5>
+                  <CardContent className="space-y-8 pt-8">
+                    {result.alternatives.map((alt, idx) => {
+                      const colors = ['bg-cream', 'bg-neo-yellow', 'bg-neo-blue', 'bg-neo-red', 'bg-neo-purple'];
+                      const bgColor = colors[idx % colors.length];
+                      const textColor = (bgColor === 'bg-neo-blue' || bgColor === 'bg-neo-red' || bgColor === 'bg-neo-purple') ? 'text-white' : 'text-neo-black';
+                      return (
+                      <div key={idx} className={`border-[3px] border-neo-black rounded-neo p-6 shadow-[4px_4px_0px_rgba(0,0,0,1)] ${bgColor} ${textColor} hover:-translate-y-1 transition-transform`}>
+                        <div className="flex justify-between items-center mb-6">
+                          <h5 className="font-black text-xl uppercase bg-white text-neo-black px-4 py-2 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] -rotate-1">
+                            Alternatif {idx + 1}
+                          </h5>
                         </div>
-                        {renderSolutionDetails(alt)}
+                        <div className="bg-white text-neo-black p-4 rounded-neo border-[3px] border-neo-black">
+                          {renderSolutionDetails(alt)}
+                        </div>
                       </div>
-                    ))}
+                    )})}
                   </CardContent>
                 </Card>
               )}
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-slate-100">
-                    <Info className="w-5 h-5 text-purple-400" />
+              <Card className="bg-white mt-8 border-[3px] border-neo-black shadow-neo-brutal">
+                <CardHeader className="bg-cream border-b-[3px] border-neo-black">
+                  <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
+                    <Info className="w-6 h-6 text-neo-purple stroke-[3px]" />
                     Proses Algoritma (Step-by-step)
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-5">
+                <CardContent className="pt-10 pb-8 px-4 md:px-8">
+                  <div className="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-[4px] before:bg-neo-black">
                     {result.steps.map((step, idx) => {
                       const isCalculation = step.startsWith("Perhitungan:");
                       const isConclusion = step.startsWith("Kesimpulan:");
@@ -238,22 +246,23 @@ export function Demo() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
                           key={idx} 
-                          className={`flex gap-4 items-start ${isCalculation ? 'ml-10 mt-[-10px] text-slate-400 bg-slate-900/50 p-3 rounded-md border border-slate-800' : ''} ${isConclusion ? 'mt-6 pt-4 border-t border-slate-800 text-blue-300' : ''}`}
+                          className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group`}
                         >
-                          {!isCalculation && !isConclusion && !isInitial && (
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center text-xs font-medium text-slate-400 mt-0.5">
-                              <ArrowRightCircle className="w-4 h-4" />
-                            </div>
-                          )}
-                          <p className={`text-sm leading-relaxed ${isCalculation ? 'font-mono text-xs' : 'text-slate-300'}`}>
-                            {step.split(/(Rp [\d.]+)/).map((part, i) => 
-                              part.startsWith('Rp') ? (
-                                <span key={i} className="font-medium text-blue-400">{part}</span>
-                              ) : (
-                                <span key={i}>{part}</span>
-                              )
-                            )}
-                          </p>
+                          <div className={`flex items-center justify-center w-12 h-12 rounded-full border-[3px] border-neo-black bg-neo-yellow shadow-[2px_2px_0px_rgba(0,0,0,1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-black text-xl`}>
+                            {idx + 1}
+                          </div>
+                          
+                          <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-neo border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] bg-white hover:-translate-y-1 transition-transform ${isCalculation ? 'bg-cream text-neo-black font-mono' : isConclusion ? 'bg-neo-blue text-white' : 'text-neo-black'}`}>
+                            <p className="font-bold text-base md:text-lg leading-relaxed">
+                              {step.split(/(Rp [\d.]+)/).map((part, i) => 
+                                part.startsWith('Rp') ? (
+                                  <span key={i} className={`font-black ${isConclusion ? 'text-neo-yellow' : 'text-neo-blue bg-white px-2 py-0.5 border-[2px] border-neo-black mx-1 inline-block shadow-[1px_1px_0px_rgba(0,0,0,1)]'}`}>{part}</span>
+                                ) : (
+                                  <span key={i}>{part}</span>
+                                )
+                              )}
+                            </p>
+                          </div>
                         </motion.div>
                       );
                     })}
@@ -262,10 +271,10 @@ export function Demo() {
               </Card>
             </motion.div>
           ) : (
-            <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-slate-500 border-2 border-dashed border-slate-800 rounded-xl p-8 text-center">
-              <Calculator className="w-12 h-12 mb-4 text-slate-700" />
-              <p className="text-lg font-medium text-slate-400">Belum ada perhitungan</p>
-              <p className="text-sm mt-2 max-w-sm">Masukkan total belanja dan uang dibayar di form sebelah kiri untuk melihat hasil.</p>
+            <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-neo-black border-[4px] border-dashed border-neo-black bg-cream rounded-neo p-8 text-center shadow-neo-brutal">
+              <Calculator className="w-16 h-16 mb-6 text-neo-blue stroke-[2.5px]" />
+              <p className="text-2xl font-black uppercase">Belum ada perhitungan</p>
+              <p className="text-lg font-medium mt-4 max-w-sm bg-white p-3 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] -rotate-1">Masukkan total belanja dan uang dibayar di form sebelah kiri untuk melihat hasil.</p>
             </div>
           )}
         </div>

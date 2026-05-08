@@ -19,7 +19,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-black/60"
             onClick={onClose}
           />
           <motion.div
@@ -28,20 +28,20 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed left-[50%] top-[50%] z-50 w-full max-w-md translate-x-[-50%] translate-y-[-50%] p-4"
           >
-            <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-xl">
-              <div className="flex items-center justify-between border-b border-slate-800 px-6 py-4">
-                <h2 className="text-lg font-semibold text-slate-100">{title}</h2>
+            <div className="overflow-hidden rounded-neo border-[3px] border-neo-black bg-white shadow-neo-brutal-xl">
+              <div className="flex items-center justify-between border-b-[3px] border-neo-black px-6 py-4 bg-neo-yellow">
+                <h2 className="text-xl font-bold text-neo-black uppercase">{title}</h2>
                 <button
                   onClick={onClose}
-                  className="rounded-full p-1 text-slate-400 hover:bg-slate-800 hover:text-slate-100 transition-colors"
+                  className="rounded-full p-1 text-neo-black hover:bg-white border-[3px] border-transparent hover:border-neo-black transition-colors"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-6 w-6 stroke-[3px]" />
                 </button>
               </div>
-              <div className="p-6 text-slate-300">
+              <div className="p-6 text-neo-black font-medium">
                 {children}
               </div>
-              <div className="flex justify-end border-t border-slate-800 px-6 py-4 bg-slate-900/50">
+              <div className="flex justify-end border-t-[3px] border-neo-black px-6 py-4 bg-cream">
                 <Button onClick={onClose}>Mengerti</Button>
               </div>
             </div>
