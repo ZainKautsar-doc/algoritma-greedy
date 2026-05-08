@@ -1,8 +1,10 @@
 import { QuizOption } from "../../utils/quizData";
 import { cn } from "../../utils/cn";
 import { motion } from "framer-motion";
+import React from "react";
 
 interface OptionButtonProps {
+  key?: React.Key;
   option: QuizOption;
   isSelected: boolean;
   showFeedback: boolean;
