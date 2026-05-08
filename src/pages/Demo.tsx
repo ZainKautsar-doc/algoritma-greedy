@@ -100,8 +100,8 @@ export function Demo() {
 
       <div className="grid lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
-          <Card className="sticky top-28 bg-neo-purple">
-            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+          <Card className="sticky top-28 bg-neo-purple overflow-hidden">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
                 <Calculator className="w-6 h-6 stroke-[3px]" />
                 Input Transaksi
@@ -169,7 +169,7 @@ export function Demo() {
                 <div className="absolute -top-4 -right-4 bg-neo-yellow text-neo-black text-sm font-bold px-4 py-2 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] flex items-center gap-2 transform rotate-3 z-10">
                   <CheckCircle2 className="w-5 h-5 stroke-[3px]" /> Solusi Optimal (Greedy)
                 </div>
-                <CardHeader className="pb-4 bg-white border-b-[3px] border-neo-black rounded-t-lg">
+                <CardHeader className="pb-4 bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
                   <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
                     <Receipt className="w-6 h-6 stroke-[3px]" />
                     Hasil Utama
@@ -226,8 +226,8 @@ export function Demo() {
                 </Card>
               )}
 
-              <Card className="bg-white mt-8 border-[3px] border-neo-black shadow-neo-brutal">
-                <CardHeader className="bg-cream border-b-[3px] border-neo-black">
+              <Card className="bg-white mt-8 border-[3px] border-neo-black shadow-neo-brutal overflow-hidden">
+                <CardHeader className="bg-cream border-b-[3px] border-neo-black rounded-t-[17px]">
                   <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
                     <Info className="w-6 h-6 text-neo-purple stroke-[3px]" />
                     Proses Algoritma (Step-by-step)

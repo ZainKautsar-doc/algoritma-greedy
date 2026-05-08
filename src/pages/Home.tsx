@@ -75,7 +75,7 @@ export function Home() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <Card className="bg-cream -rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black">
+            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <Target className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
@@ -94,7 +94,7 @@ export function Home() {
           </Card>
 
           <Card className="bg-cream rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black">
+            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <Activity className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
@@ -125,8 +125,8 @@ export function Home() {
           </Card>
         </div>
 
-        <Card className="bg-neo-yellow">
-          <CardHeader className="border-b-[3px] border-neo-black bg-white">
+        <Card className="bg-neo-yellow overflow-hidden">
+          <CardHeader className="border-b-[3px] border-neo-black bg-white rounded-t-[17px]">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-neo bg-neo-blue flex items-center justify-center border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <ListOrdered className="w-6 h-6 text-white stroke-[2.5px]" />
@@ -168,8 +168,8 @@ export function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <Card className="bg-cream rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black">
+          <Card className="bg-cream rotate-1 hover:rotate-0 transition-transform overflow-hidden">
+            <CardHeader className="bg-neo-blue text-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <WalletCards className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
@@ -187,8 +187,8 @@ export function Home() {
             </CardContent>
           </Card>
 
-          <Card className="bg-cream -rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black">
+          <Card className="bg-cream -rotate-1 hover:rotate-0 transition-transform overflow-hidden">
+            <CardHeader className="bg-neo-purple text-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <div className="w-14 h-14 rounded-neo bg-white flex items-center justify-center mb-4 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <Briefcase className="w-7 h-7 text-neo-black stroke-[2.5px]" />
               </div>
@@ -215,8 +215,8 @@ export function Home() {
         </div>
 
         {/* Real Case Example */}
-        <Card className="bg-cream">
-          <CardHeader className="bg-white border-b-[3px] border-neo-black">
+        <Card className="bg-cream overflow-hidden">
+          <CardHeader className="bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-neo bg-neo-green flex items-center justify-center border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
                 <Receipt className="w-6 h-6 text-neo-black stroke-[2.5px]" />
@@ -280,8 +280,8 @@ export function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="bg-neo-green h-full rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+          <Card className="bg-neo-green h-full rotate-1 hover:rotate-0 transition-transform overflow-hidden">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <CardTitle className="text-2xl text-neo-black flex items-center gap-4 uppercase">
                 <CheckCircle2 className="w-8 h-8 stroke-[3px]" /> 
                 A. Kelebihan
@@ -305,8 +305,8 @@ export function Home() {
             </CardContent>
           </Card>
 
-          <Card className="bg-neo-red h-full -rotate-1 hover:rotate-0 transition-transform">
-            <CardHeader className="bg-white border-b-[3px] border-neo-black">
+          <Card className="bg-neo-red h-full -rotate-1 hover:rotate-0 transition-transform overflow-hidden">
+            <CardHeader className="bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <CardTitle className="text-2xl text-neo-black flex items-center gap-4 uppercase">
                 <XCircle className="w-8 h-8 stroke-[3px]" /> 
                 B. Kekurangan

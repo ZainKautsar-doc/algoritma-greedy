@@ -29,7 +29,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
             className="fixed left-[50%] top-[50%] z-50 w-full max-w-md translate-x-[-50%] translate-y-[-50%] p-4"
           >
             <div className="overflow-hidden rounded-neo border-[3px] border-neo-black bg-white shadow-neo-brutal-xl">
-              <div className="flex items-center justify-between border-b-[3px] border-neo-black px-6 py-4 bg-neo-yellow">
+              <div className="flex items-center justify-between border-b-[3px] border-neo-black px-6 py-4 bg-neo-yellow rounded-t-[17px]">
                 <h2 className="text-xl font-bold text-neo-black uppercase">{title}</h2>
                 <button
                   onClick={onClose}
