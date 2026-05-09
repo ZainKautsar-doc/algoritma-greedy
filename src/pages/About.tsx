@@ -16,23 +16,23 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Zain",
-    nim: "1",
-    photo: "/src/img/profil.jpg",
+    name: "Zain Kautsar Ridha",
+    nim: "247006111153",
+    photo: "/src/img/zain.webp",
     socials: {
-      instagram: "#",
-      github: "#",
-      linkedin: "#",
+      instagram: "https://instagram.com/zainzenn",
+      github: "https://github.com/zainkautsar-doc",
+      linkedin: "https://www.linkedin.com/in/zainkautsarridha/",
     },
   },
   {
-    name: "Adid",
-    nim: "2",
-    photo: "/src/img/profil.jpg",
+    name: "Adithya Nurrahman",
+    nim: "247006111176",
+    photo: "/src/img/adith.webp",
     socials: {
-      instagram: "#",
-      github: "#",
-      linkedin: "#",
+      instagram: "https://www.instagram.com/moreadithh/",
+      github: "https://github.com/MOREA19",
+      linkedin: "https://www.linkedin.com/in/moreadith/",
     },
   },
 ];
