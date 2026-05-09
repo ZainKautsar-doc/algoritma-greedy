@@ -53,14 +53,14 @@ export function Home() {
           Website ini dirancang khusus untuk memvisualisasikan cara kerja algoritma Greedy secara interaktif melalui <strong className="text-neo-black bg-neo-yellow px-1 border border-neo-black font-bold">studi kasus pemberian kembalian uang (Coin Change)</strong>.
         </p>
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/demo">
-            <Button size="lg" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto">
-              Lihat Visualisasi Demo <ArrowRight className="w-6 h-6 stroke-[3px]" />
+          <Link to="/demo" className="w-full sm:w-auto">
+            <Button size="lg" className="gap-2 text-lg md:text-xl px-6 py-4 md:px-10 md:py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto">
+              Lihat Visualisasi Demo <ArrowRight className="w-5 h-5 md:w-6 md:h-6 stroke-[3px]" />
             </Button>
           </Link>
-          <Link to="/quiz">
-            <Button size="lg" variant="outline" className="gap-2 text-xl px-10 py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto bg-neo-yellow">
-              Mulai Kuis <Zap className="w-6 h-6 stroke-[3px]" />
+          <Link to="/quiz" className="w-full sm:w-auto">
+            <Button size="lg" variant="outline" className="gap-2 text-lg md:text-xl px-6 py-4 md:px-10 md:py-6 rounded-neo hover:-translate-y-2 transition-transform duration-300 w-full sm:w-auto bg-neo-yellow">
+              Mulai Kuis <Zap className="w-5 h-5 md:w-6 md:h-6 stroke-[3px]" />
             </Button>
           </Link>
         </div>
@@ -358,10 +358,13 @@ export function Home() {
           <p className="text-xl md:text-2xl text-white/90 font-bold max-w-2xl mx-auto leading-relaxed">
             Uji pemahamanmu dengan kuis interaktif dan jadilah ahli algoritma Greedy!
           </p>
-          <div className="pt-4">
-            <Link to="/quiz">
-              <Button size="lg" className="bg-neo-yellow text-neo-black border-[4px] border-neo-black shadow-neo-brutal hover:shadow-neo-brutal-lg hover:-translate-y-2 text-2xl px-12 py-8 rounded-neo uppercase font-black transition-all">
-                Mulai Kuis Sekarang <Zap className="w-8 h-8 stroke-[3px] ml-2" />
+          <div className="pt-4 flex justify-center px-4 sm:px-0">
+            <Link to="/quiz" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                className="bg-neo-yellow text-neo-black border-[3px] md:border-[4px] border-neo-black shadow-neo-brutal hover:shadow-neo-brutal-lg hover:-translate-y-2 text-lg sm:text-xl md:text-2xl px-6 py-4 sm:py-5 md:px-12 md:py-8 rounded-neo uppercase font-black transition-all w-full sm:w-auto gap-3"
+              >
+                Mulai Kuis Sekarang <Zap className="w-5 h-5 sm:w-6 md:w-8 md:h-8 stroke-[3px]" />
               </Button>
             </Link>
           </div>
