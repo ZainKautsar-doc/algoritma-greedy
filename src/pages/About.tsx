@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Zain Kautsar Ridha",
     nim: "247006111153",
-    photo: "/src/img/zain.webp",
+    photo: "../img/zain.webp",
     socials: {
       instagram: "https://instagram.com/zainzenn",
       github: "https://github.com/zainkautsar-doc",
@@ -28,7 +28,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Adithya Nurrahman",
     nim: "247006111176",
-    photo: "/src/img/adith.webp",
+    photo: "../img/adith.webp",
     socials: {
       instagram: "https://www.instagram.com/moreadithh/",
       github: "https://github.com/MOREA19",
