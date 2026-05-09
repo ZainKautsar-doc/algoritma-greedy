@@ -49,7 +49,7 @@ const ProfileCard: React.FC<{ member: TeamMember; delay: number }> = ({
       className="group"
     >
       <Card className="overflow-hidden bg-cream border-[3px] border-neo-black rounded-neo shadow-neo-brutal transition-transform duration-300 hover:-translate-y-2">
-        <CardContent className="p-8 flex flex-col items-center text-center">
+        <CardContent className="p-6 md:p-8 flex flex-col items-center text-center">
           <div className="w-32 h-32 mb-6 rounded-full overflow-hidden border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] bg-neo-yellow">
             <img
               src={member.photo}
@@ -59,7 +59,7 @@ const ProfileCard: React.FC<{ member: TeamMember; delay: number }> = ({
             />
           </div>
 
-          <h3 className="text-3xl font-black text-neo-black mb-2 uppercase">
+          <h3 className="text-2xl md:text-3xl font-black text-neo-black mb-2 uppercase">
             {member.name}
           </h3>
           <p className="bg-neo-blue text-white px-3 py-1 font-bold text-sm mb-6 pb-1 border-[2px] border-neo-black">
@@ -113,12 +113,12 @@ export function About() {
         className="max-w-4xl mx-auto px-4"
       >
         <Card className="bg-neo-green border-[3px] border-neo-black rounded-neo overflow-hidden shadow-neo-brutal">
-          <CardContent className="p-8 md:p-10 space-y-8 bg-white mt-2 mb-2 ml-2 mr-2 border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-            <h2 className="text-3xl md:text-4xl font-black text-neo-black text-center uppercase bg-neo-yellow inline-block px-4 py-2 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] -rotate-1 mx-auto block w-fit">
+          <CardContent className="p-4 sm:p-6 md:p-10 space-y-8 bg-white mt-1.5 sm:mt-2 mb-1.5 sm:mb-2 ml-1.5 sm:ml-2 mr-1.5 sm:mr-2 border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neo-black text-center uppercase bg-neo-yellow inline-block px-4 py-2 border-[3px] border-neo-black shadow-[2px_2px_0px_rgba(0,0,0,1)] -rotate-1 mx-auto block w-fit">
               About This Project
             </h2>
 
-            <div className="space-y-6 text-neo-black font-medium leading-relaxed text-left text-lg">
+            <div className="space-y-6 text-neo-black font-medium leading-relaxed text-left text-base sm:text-lg">
               <p>
                 Website ini dikembangkan sebagai bagian dari tugas Ujian Akhir
                 Semester pada mata kuliah{" "}

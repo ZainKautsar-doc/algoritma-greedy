@@ -101,7 +101,7 @@ export function Demo() {
 
       <div className="grid lg:grid-cols-12 gap-8">
         <div className="lg:col-span-4">
-          <Card className="sticky top-28 bg-neo-purple overflow-hidden">
+          <Card className="lg:sticky lg:top-28 bg-neo-purple overflow-hidden">
             <CardHeader className="bg-white border-b-[3px] border-neo-black rounded-t-[17px]">
               <CardTitle className="flex items-center gap-3 text-neo-black uppercase">
                 <Calculator className="w-6 h-6 stroke-[3px]" />
@@ -177,9 +177,9 @@ export function Demo() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="bg-white rounded-b-lg pt-6">
-                  <div className="mb-8 border-[3px] border-neo-black p-4 inline-block bg-neo-yellow shadow-[4px_4px_0px_rgba(0,0,0,1)] -rotate-1">
+                  <div className="mb-8 border-[3px] border-neo-black p-4 inline-block bg-neo-yellow shadow-[4px_4px_0px_rgba(0,0,0,1)] -rotate-1 w-full sm:w-auto text-center sm:text-left">
                     <p className="text-lg font-bold text-neo-black mb-1">Total Kembalian</p>
-                    <p className="text-4xl md:text-5xl font-black text-neo-black">
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-black text-neo-black">
                       Rp {result.originalAmount.toLocaleString('id-ID')}
                     </p>
                   </div>
@@ -252,8 +252,8 @@ export function Demo() {
                             {isConclusion ? '!' : idx + 1}
                           </div>
                           
-                          <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-5 rounded-neo border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform ${isCalculation ? 'bg-cream text-neo-black font-mono' : isConclusion ? 'bg-neo-blue text-white' : 'bg-white text-neo-black'}`}>
-                            <p className="font-bold text-base md:text-lg leading-relaxed">
+                          <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-4 sm:p-5 rounded-neo border-[3px] border-neo-black shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform ${isCalculation ? 'bg-cream text-neo-black font-mono' : isConclusion ? 'bg-neo-blue text-white' : 'bg-white text-neo-black'}`}>
+                            <p className="font-bold text-sm sm:text-base md:text-lg leading-relaxed">
                               {step.split(/(Rp [\d.]+)/).map((part, i) => 
                                 part.startsWith('Rp') ? (
                                   <span key={i} className={`font-black ${isConclusion ? 'text-neo-yellow' : 'text-neo-blue bg-white px-2 py-0.5 border-[2px] border-neo-black mx-1 inline-block shadow-[1px_1px_0px_rgba(0,0,0,1)]'}`}>{part}</span>

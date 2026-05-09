@@ -138,8 +138,8 @@ export default function Quiz() {
 
             <div className="flex flex-col items-center gap-4 mb-10">
               <div className="text-sm font-bold uppercase tracking-widest text-neo-black/40">Skor Akhir Kamu</div>
-              <div className="text-7xl font-black text-neo-black flex items-baseline gap-2">
-                {score} <span className="text-3xl text-neo-black/30">/ {session.questions.length}</span>
+              <div className="text-5xl sm:text-7xl font-black text-neo-black flex items-baseline gap-2">
+                {score} <span className="text-2xl sm:text-3xl text-neo-black/30">/ {session.questions.length}</span>
               </div>
             </div>
 
@@ -176,10 +176,10 @@ export default function Quiz() {
     <div className="min-h-screen pt-24 pb-12 px-4 bg-cream">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black text-neo-black uppercase tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-neo-black uppercase tracking-tight mb-4">
             Greedy Algorithm Quiz
           </h1>
-          <p className="text-lg font-bold text-neo-black/60 max-w-xl mx-auto uppercase">
+          <p className="text-base sm:text-lg font-bold text-neo-black/60 max-w-xl mx-auto uppercase">
             Uji pemahamanmu tentang Coin Change Problem dan Algoritma Greedy
           </p>
         </div>
