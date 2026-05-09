@@ -30,7 +30,7 @@ export default function Quiz() {
   }, []);
 
   const startNewQuiz = () => {
-    const questions = getRandomQuestions(2);
+    const questions = getRandomQuestions(4);
     if (questions.length === 0) {
       throw new Error("Tidak ada soal tersedia");
     }
@@ -139,7 +139,7 @@ export default function Quiz() {
             <div className="flex flex-col items-center gap-4 mb-10">
               <div className="text-sm font-bold uppercase tracking-widest text-neo-black/40">Skor Akhir Kamu</div>
               <div className="text-5xl sm:text-7xl font-black text-neo-black flex items-baseline gap-2">
-                {score} <span className="text-2xl sm:text-3xl text-neo-black/30">/ {session.questions.length}</span>
+                {score} <span className="text-2xl sm:text-3xl text-neo-black/30">/ 100</span>
               </div>
             </div>
 

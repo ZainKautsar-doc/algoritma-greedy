@@ -26,7 +26,7 @@ export default function QuizProgress({ currentQuestion, totalQuestions, score, i
             Skor
           </p>
           <div className="bg-neo-yellow border-[3px] border-neo-black px-4 py-1 rounded-full shadow-neo-brutal font-bold text-xl">
-            {score}/{totalQuestions}
+            {score} Poin
           </div>
         </div>
       </div>

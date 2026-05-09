@@ -325,6 +325,58 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       { id: 'd', text: "Kombinasi dari algoritma Dynamic Programming", isCorrect: false }
     ],
     explanation: "Alternatif Solusi ditampilkan untuk menunjukkan bahwa meskipun ada banyak cara, Greedy memberikan jumlah ITEM PALING SEDIKIT. Ini education-focused untuk ilustrasi mengapa Greedy 'greedy' → selalu ambil terbesar dulu → hasil optimal (untuk canonical denominasi)."
+  },
+  {
+    id: 'q24',
+    category: 'concept',
+    type: 'multiple_choice',
+    question: "Urutan langkah yang benar dalam algoritma Greedy adalah...",
+    options: [
+      { id: 'a', text: "Tentukan Pilihan -> Pilih Terbaik -> Kunci Keputusan -> Ulangi", isCorrect: true },
+      { id: 'b', text: "Pilih Terbaik -> Kunci Keputusan -> Tentukan Pilihan -> Selesai", isCorrect: false },
+      { id: 'c', text: "Ulangi -> Pilih Terbaik -> Tentukan Pilihan -> Kunci", isCorrect: false },
+      { id: 'd', text: "Tentukan Pilihan -> Ulangi -> Pilih Terbaik -> Kunci", isCorrect: false }
+    ],
+    explanation: "Langkah-langkah Greedy yang umum: 1. Identifikasi semua pilihan yang ada. 2. Pilih yang terbaik saat itu (lokal optimum). 3. Kunci keputusan tersebut (tidak bisa diubah). 4. Ulangi proses sampai masalah selesai."
+  },
+  {
+    id: 'q25',
+    category: 'concept',
+    type: 'multiple_choice',
+    question: "Jika keputusan sudah diambil dalam algoritma Greedy, apakah keputusan tersebut bisa diubah di langkah berikutnya?",
+    options: [
+      { id: 'a', text: "Ya, jika ditemukan solusi yang lebih baik", isCorrect: false },
+      { id: 'b', text: "Hanya jika jumlah koin tidak mencukupi", isCorrect: false },
+      { id: 'c', text: "Tidak, keputusan Greedy bersifat permanen (irreversible)", isCorrect: true },
+      { id: 'd', text: "Tergantung pada jenis mata uang yang digunakan", isCorrect: false }
+    ],
+    explanation: "Salah satu sifat utama Greedy adalah 'irreversible'. Sekali kita mengambil sebuah koin/lembar uang, kita tidak akan pernah mengembalikan atau menukarnya lagi meskipun di langkah selanjutnya terlihat ada masalah."
+  },
+  {
+    id: 'q26',
+    category: 'theory',
+    type: 'multiple_choice',
+    question: "Bayangkan Anda mengambil uang dari kotak dengan mata tertutup, lalu Greedy menyuruh mengambil pecahan terbesar yang teraba. Ini adalah contoh...",
+    options: [
+      { id: 'a', text: "Dynamic Programming", isCorrect: false },
+      { id: 'b', text: "Greedy Choice Property", isCorrect: true },
+      { id: 'c', text: "Optimal Substructure", isCorrect: false },
+      { id: 'd', text: "Brute Force", isCorrect: false }
+    ],
+    explanation: "Mengambil pilihan terbaik yang tersedia langsung di depan mata tanpa memikirkan apa yang ada di bawahnya adalah inti dari Greedy Choice Property."
+  },
+  {
+    id: 'q27',
+    category: 'advantage_disadvantage',
+    type: 'multiple_choice',
+    question: "Mengapa algoritma Greedy disebut 'rakus'?",
+    options: [
+      { id: 'a', text: "Karena memakan banyak memori komputer", isCorrect: false },
+      { id: 'b', text: "Karena selalu mengambil keuntungan terbesar di setiap langkah tanpa pikir panjang", isCorrect: true },
+      { id: 'c', text: "Karena sulit untuk dipelajari oleh pemula", isCorrect: false },
+      { id: 'd', text: "Karena selalu memberikan hasil yang salah", isCorrect: false }
+    ],
+    explanation: "Istilah 'Greedy' (rakus) digunakan karena algoritma ini hanya memikirkan keuntungan maksimal di langkah saat ini (lokal) tanpa peduli dampak jangka panjangnya bagi keseluruhan masalah."
   }
 ];
 
@@ -338,9 +390,13 @@ export function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function getRandomQuestions(count: number): QuizQuestion[] {
-  return shuffleArray(QUIZ_QUESTIONS).slice(0, count);
+  const shuffled = shuffleArray(QUIZ_QUESTIONS).slice(0, count);
+  return shuffled.map(q => ({
+    ...q,
+    options: shuffleArray(q.options)
+  }));
 }
 
 export function calculateScore(answers: { isCorrect: boolean }[]): number {
-  return answers.filter(a => a.isCorrect).length;
+  return answers.reduce((score, a) => score + (a.isCorrect ? 25 : 1), 0);
 }
